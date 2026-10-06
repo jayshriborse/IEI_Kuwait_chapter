@@ -1,0 +1,366 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum MembershipGrade {
+  FIE
+  MIE
+  AMIE
+  TIE
+  SMIE
+}
+
+enum AuthProvider {
+  GOOGLE
+  APPLE
+}
+
+model Member {
+  id              String          @id @default(uuid())
+  memberCode      String          @unique
+  ieiIndiaNo      String?         @unique
+  fullName        String
+  grade           MembershipGrade
+  discipline      String
+  mobile          String
+  bloodGroup      String?
+  memberSinceYear     Int?
+  photoKey            String?
+  photoUpdatedAt      DateTime?
+  company             String?
+  designation         String?
+  governorate         String?
+  sector              String?
+  areaLocality        String?
+  familyStatus        String?
+  familyMembersCount  Int?
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+
+  authIdentities AuthIdentity[]
+  eventCheckIns  EventCheckIn[]
+  notifications  Notification[]
+  deviceTokens   DeviceToken[]
+  subscriptions  MemberSubscription[]
+  confirmedDeclarations PaymentDeclaration[] @relation("ConfirmedReceipts")
+  officeBearerAssignments OfficeBearerAssignment[]
+  auditLogs      AuditLog[]
+  eventRsvps     EventRsvp[]
+  wingConvenors  WingConvenor[]
+  wingPosts      WingPost[]
+
+  @@index([mobile])
+  @@map("members")
+}
+
+enum NotificationType {
+  EVENT_REMINDER
+  RECEIPT_CONFIRMED
+  DUES_DUE
+  URGENT_BLOOD
+  WING_POST
+  CHAPTER_NOTICE
+}
+
+enum DevicePlatform {
+  IOS
+  ANDROID
+}
+
+model Notification {
+  id        String           @id @default(uuid())
+  memberId  String
+  type      NotificationType
+  title     String
+  body      String
+  readAt    DateTime?
+  createdAt DateTime         @default(now())
+
+  member    Member           @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  @@index([memberId, readAt])
+  @@index([memberId, createdAt])
+  @@map("notifications")
+}
+
+model DeviceToken {
+  id         String         @id @default(uuid())
+  memberId   String
+  token      String         @unique
+  platform   DevicePlatform
+  createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt
+  lastSeenAt DateTime       @default(now())
+
+  member     Member         @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  @@index([memberId])
+  @@map("device_tokens")
+}
+
+model EventCheckIn {
+  id             String    @id @default(uuid())
+  eventId        String    @default("1")
+  memberCode     String
+  memberId       String?
+  scannedAt      DateTime  @default(now())
+  syncedAt       DateTime  @default(now())
+  deviceOffline  Boolean   @default(false)
+  seats          Int       @default(1)
+  manual         Boolean   @default(false)
+  volunteerMemberId String?
+  volunteerNotes String?
+  createdAt      DateTime  @default(now())
+
+  member         Member?   @relation(fields: [memberId], references: [id], onDelete: SetNull)
+
+  @@unique([eventId, memberCode])
+  @@index([eventId])
+  @@index([memberCode])
+  @@map("event_check_ins")
+}
+
+model EventRsvp {
+  id             String    @id @default(uuid())
+  eventId        String
+  memberId       String?
+  memberCode     String?
+  guestName      String?
+  guestMobile    String?
+  guestEmail     String?
+  seats          Int       @default(1)
+  familyCount    String?   @default("+1")
+  isGuest        Boolean   @default(false)
+  createdAt      DateTime  @default(now())
+
+  member         Member?   @relation(fields: [memberId], references: [id], onDelete: SetNull)
+
+  @@index([eventId])
+  @@index([memberId])
+  @@map("event_rsvps")
+}
+
+model AuthIdentity {
+  id             String       @id @default(uuid())
+  provider       AuthProvider
+  providerUserId String
+  email          String?
+  memberId       String?
+  createdAt      DateTime     @default(now())
+
+  member Member? @relation(fields: [memberId], references: [id], onDelete: SetNull)
+
+  @@unique([provider, providerUserId])
+  @@unique([memberId, provider])
+  @@index([memberId])
+  @@map("auth_identities")
+}
+
+enum SubscriptionStatus {
+  DUE
+  AWAITING_CONFIRMATION
+  PAID
+}
+
+enum PaymentMethod {
+  BANK_TRANSFER
+  CASH
+}
+
+enum DeclarationStatus {
+  PENDING
+  CONFIRMED
+}
+
+enum OfficePosition {
+  TREASURER
+  GENERAL_SECRETARY
+  CHAIRMAN
+  EC_VOLUNTEER
+}
+
+model SubscriptionPeriod {
+  id         String   @id @default(uuid())
+  label      String   @unique
+  startsOn   DateTime @db.Date
+  endsOn     DateTime @db.Date
+  amountFils Int
+  currency   String   @default("KWD")
+
+  subscriptions MemberSubscription[]
+
+  @@map("subscription_periods")
+}
+
+model MemberSubscription {
+  id       String             @id @default(uuid())
+  memberId String
+  periodId String
+  status   SubscriptionStatus @default(DUE)
+  paidAt   DateTime?
+
+  member   Member             @relation(fields: [memberId], references: [id], onDelete: Cascade)
+  period   SubscriptionPeriod @relation(fields: [periodId], references: [id], onDelete: Cascade)
+  declarations PaymentDeclaration[]
+
+  @@unique([memberId, periodId])
+  @@index([status])
+  @@map("member_subscriptions")
+}
+
+model PaymentDeclaration {
+  id                   String            @id @default(uuid())
+  memberSubscriptionId String
+  method               PaymentMethod
+  receiptKey           String?
+  status               DeclarationStatus @default(PENDING)
+  submittedAt          DateTime          @default(now())
+  confirmedByMemberId  String?
+  confirmedAt          DateTime?
+  receiptNo            String?
+  bookNo               String?
+
+  memberSubscription   MemberSubscription @relation(fields: [memberSubscriptionId], references: [id], onDelete: Cascade)
+  confirmedByMember    Member?            @relation("ConfirmedReceipts", fields: [confirmedByMemberId], references: [id], onDelete: SetNull)
+
+  @@map("payment_declarations")
+}
+
+model OfficeBearerAssignment {
+  id       String         @id @default(uuid())
+  memberId String
+  position OfficePosition
+  term     String
+  active   Boolean        @default(true)
+
+  member   Member         @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  @@unique([memberId, position, term])
+  @@map("office_bearer_assignments")
+}
+
+model AuditLog {
+  id            String   @id @default(uuid())
+  actorMemberId String?
+  action        String
+  entity        String
+  entityId      String
+  details       Json?
+  createdAt     DateTime @default(now())
+
+  actorMember   Member?  @relation(fields: [actorMemberId], references: [id], onDelete: SetNull)
+
+  @@map("audit_logs")
+}
+
+enum DocumentType {
+  DEGREE_CERTIFICATE
+  PASSPORT_COPY
+  CIVIL_ID
+  PHOTOGRAPH
+}
+
+enum ApplicationStatus {
+  DRAFT
+  AWAITING_REVIEW
+  UNDER_SCRUTINY
+  APPROVED
+  REJECTED
+}
+
+model MembershipApplication {
+  id                String            @id @default(uuid())
+  applicationNumber String            @unique
+  fullName          String
+  mobile            String
+  email             String?
+  discipline        String
+  employer          String
+  designation       String
+  experienceYears   String?
+  qualification     String
+  referredBy        String?
+  status            ApplicationStatus @default(AWAITING_REVIEW)
+  applicantToken    String?
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+
+  documents         MembershipDocument[]
+
+  @@index([mobile])
+  @@index([status])
+  @@map("membership_applications")
+}
+
+model MembershipDocument {
+  id               String       @id @default(uuid())
+  applicationId    String
+  documentType     DocumentType
+  originalFileName String
+  storageKey       String
+  mimeType         String
+  fileSize         Int
+  uploadedAt       DateTime     @default(now())
+
+  application      MembershipApplication @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  @@unique([applicationId, documentType])
+  @@index([applicationId])
+  @@map("membership_documents")
+}
+
+model Wing {
+  id        String         @id @default(uuid())
+  slug      String         @unique
+  name      String
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+
+  convenors WingConvenor[]
+  posts     WingPost[]
+
+  @@map("wings")
+}
+
+model WingConvenor {
+  id         String    @id @default(uuid())
+  memberId   String
+  wingId     String
+  assignedBy String?
+  assignedAt DateTime  @default(now())
+  active     Boolean   @default(true)
+
+  member     Member    @relation(fields: [memberId], references: [id], onDelete: Cascade)
+  wing       Wing      @relation(fields: [wingId], references: [id], onDelete: Cascade)
+
+  @@unique([memberId, wingId])
+  @@index([memberId])
+  @@index([wingId])
+  @@map("wing_convenors")
+}
+
+model WingPost {
+  id             String    @id @default(uuid())
+  wingId         String
+  authorMemberId String
+  title          String
+  body           String
+  eventDate      DateTime?
+  imageKey       String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  deletedAt      DateTime?
+
+  wing           Wing      @relation(fields: [wingId], references: [id], onDelete: Cascade)
+  author         Member    @relation(fields: [authorMemberId], references: [id], onDelete: Cascade)
+
+  @@index([wingId, deletedAt, createdAt])
+  @@index([authorMemberId])
+  @@map("wing_posts")
+}
+

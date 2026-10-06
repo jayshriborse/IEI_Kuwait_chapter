@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Figtree", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-blackletter: "Old English Text MT", "UnifrakturCook", "UnifrakturMaguntia", "Cloister Black", "Engravers Old English", Georgia, serif;
+
+  --color-iei-dark: #402310;
+  --color-iei-dark-header: #643312;
+  --color-iei-circle-top: #5D3011;
+  --color-iei-circle-bottom: #2E2A18;
+  --color-iei-cream: #F9F4ED;
+  --color-iei-parchment: #F5EAD8;
+  --color-iei-card-bg: #EBDDC5;
+  --color-iei-peach: #FFC6A5;
+  --color-iei-peach-bg: #FFE1D0;
+  --color-iei-green-bg: #E1EECC;
+  --color-iei-green-dark: #272E1B;
+  --color-iei-terracotta: #C67139;
+  --color-iei-muted: #8B634A;
+  --color-iei-body: #D8CEC3;
+  --color-iei-text-dark: #201E1D;
+  --color-iei-text-sub: #474238;
+  --color-iei-tab-bg: #EEE7DB;
+  --color-iei-tab-border: #E4DBD0;
+  --color-iei-tab-inactive: #8A8075;
+}
+
+@layer base {
+  * {
+    border-color: #E4DBD0;
+  }
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-iei-dark);
+    color: var(--color-iei-cream);
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom smooth animation utilities */
+@keyframes fadeInRise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scaleInMenu {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-menu-enter {
+  animation: scaleInMenu 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-rise {
+  animation: fadeInRise 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 35s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-rise {
+    animation: none;
+  }
+  .animate-ticker {
+    animation: none;
+  }
+}

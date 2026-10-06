@@ -1,0 +1,581 @@
+{
+  "timestamp": "2026-10-05T11:15:38.467Z",
+  "databaseUrl": "postgresql://postgres:****@localhost:5432/iei_dev?schema=public",
+  "tableCounts": {
+    "members": 8,
+    "officeBearerAssignments": 1,
+    "subscriptionPeriods": 2,
+    "memberSubscriptions": 8,
+    "paymentDeclarations": 0,
+    "notifications": 9,
+    "deviceTokens": 0,
+    "eventCheckIns": 8,
+    "authIdentities": 0,
+    "auditLogs": 9
+  },
+  "data": {
+    "members": [
+      {
+        "id": "3c1b8cd0-ea3f-40ab-81ff-76ff45f65c9c",
+        "memberCode": "IEI9100",
+        "ieiIndiaNo": "M-DEV-9100",
+        "fullName": "Demo Member Three",
+        "grade": "AMIE",
+        "discipline": "Mechanical",
+        "mobile": "00000100",
+        "bloodGroup": "B+",
+        "memberSinceYear": 2020,
+        "photoKey": null,
+        "photoUpdatedAt": null,
+        "company": "Gulf Spic General Trading & Contracting",
+        "designation": "Project Engineer",
+        "governorate": "Capital (Al Asimah)",
+        "sector": "Construction",
+        "areaLocality": "Kuwait City",
+        "familyStatus": "Bachelor status",
+        "familyMembersCount": 1,
+        "createdAt": "2026-10-04T11:45:55.704Z",
+        "updatedAt": "2026-10-05T07:28:47.210Z"
+      },
+      {
+        "id": "bd945bb4-98ce-4084-9797-635bb4947bc8",
+        "memberCode": "IEI0015",
+        "ieiIndiaNo": "M-DEV-0015",
+        "fullName": "Eng. Rajesh Sharma",
+        "grade": "MIE",
+        "discipline": "Mechanical",
+        "mobile": "99112233",
+        "bloodGroup": "B+",
+        "memberSinceYear": 2016,
+        "photoKey": null,
+        "photoUpdatedAt": null,
+        "company": "Combined Group Contracting",
+        "designation": "Lead Mechanical Engineer",
+        "governorate": "Hawalli",
+        "sector": "Construction",
+        "areaLocality": "Salmiya",
+        "familyStatus": "Family here",
+        "familyMembersCount": 2,
+        "createdAt": "2026-10-04T16:20:31.014Z",
+        "updatedAt": "2026-10-05T07:28:47.213Z"
+      },
+      {
+        "id": "870f2293-0f0c-4ccb-882a-8c237520e10c",
+        "memberCode": "IEI0022",
+        "ieiIndiaNo": "M-DEV-0022",
+        "fullName": "Eng. Priya Sundaram",
+        "grade": "MIE",
+        "discipline": "Electronics & Comm",
+        "mobile": "99223344",
+        "bloodGroup": "O+",
+        "memberSinceYear": 2018,
+        "photoKey": null,
+        "photoUpdatedAt": null,
+        "company": "Zain Telecom",
+        "designation": "Telecom Infrastructure Specialist",
+        "governorate": "Hawalli",
+        "sector": "IT & Telecom",
+        "areaLocality": "Salmiya",
+        "familyStatus": "Family here",
+        "familyMembersCount": 3,
+        "createdAt": "2026-10-04T16:20:31.017Z",
+        "updatedAt": "2026-10-05T07:28:47.215Z"
+      },
+      {
+        "id": "39917c83-7701-424f-b68f-c7ce6e92fe7c",
+        "memberCode": "IEI0034",
+        "ieiIndiaNo": "F-DEV-0034",
+        "fullName": "Engr. Subbiah Somasundaram",
+        "grade": "FIE",
+        "discipline": "Civil",
+        "mobile": "99334455",
+        "bloodGroup": "AB+",
+        "memberSinceYear": 2005,
+        "photoKey": null,
+        "photoUpdatedAt": null,
+        "company": "Ministry of Public Works",
+        "designation": "Consultant Civil Engineer",
+        "governorate": "Capital (Al Asimah)",
+        "sector": "Public Works",
+        "areaLocality": "Kuwait City",
+        "familyStatus": "Family here",
+        "familyMembersCount": 2,
+        "createdAt": "2026-10-04T16:20:31.020Z",
+        "updatedAt": "2026-10-05T07:28:47.219Z"
+      },
+      {
+        "id": "aac2f989-3410-4b78-8fac-2b5b29f015c2",
+        "memberCode": "IEI0042",
+        "ieiIndiaNo": "F-1204856",
+        "fullName": "Engr. Upendra Kumar Behura",
+        "grade": "FIE",
+        "discipline": "Electrical",
+        "mobile": "98765432",
+        "bloodGroup": "O+",
+        "memberSinceYear": 2008,
+        "photoKey": null,
+        "photoUpdatedAt": null,
+        "company": "Equate Petrochemical",
+        "designation": "Principal Electrical Engineer",
+        "governorate": "Ahmadi",
+        "sector": "Oil & Gas",
+        "areaLocality": "Fahaheel",
+        "familyStatus": "Family here",
+        "familyMembersCount": 4,
+        "createdAt": "2026-10-04T16:20:31.023Z",
+        "updatedAt": "2026-10-05T07:28:47.222Z"
+      },
+      {
+        "id": "2c9a6af0-8da9-47b9-995f-8015f0d530a8",
+        "memberCode": "IEI9001",
+        "ieiIndiaNo": "M-DEV-9001",
+        "fullName": "Engr. Sudhir Shyam Menghani",
+        "grade": "MIE",
+        "discipline": "Electrical",
+        "mobile": "00000001",
+        "bloodGroup": "B+",
+        "memberSinceYear": 2012,
+        "photoKey": null,
+        "photoUpdatedAt": null,
+        "company": "Alghanim Industries",
+        "designation": "Chief Electrical Engineer",
+        "governorate": "Capital (Al Asimah)",
+        "sector": "Power & Water",
+        "areaLocality": "Kuwait City",
+        "familyStatus": "Family here",
+        "familyMembersCount": 4,
+        "createdAt": "2026-10-05T00:04:51.056Z",
+        "updatedAt": "2026-10-05T07:28:47.224Z"
+      },
+      {
+        "id": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "memberCode": "IEI0005",
+        "ieiIndiaNo": "M-1483721",
+        "fullName": "Eng. Karthikeyan Manickam",
+        "grade": "MIE",
+        "discipline": "Civil",
+        "mobile": "99840191",
+        "bloodGroup": "O+",
+        "memberSinceYear": 2011,
+        "photoKey": "64ced326-0f34-4aa7-89b8-510107b02b47.png",
+        "photoUpdatedAt": "2026-10-04T12:02:59.774Z",
+        "company": "KEO International Consultants",
+        "designation": "Senior Civil Engineer",
+        "governorate": "Hawalli",
+        "sector": "Construction",
+        "areaLocality": "Salmiya",
+        "familyStatus": "Family here",
+        "familyMembersCount": 3,
+        "createdAt": "2026-10-04T07:16:08.879Z",
+        "updatedAt": "2026-10-05T07:28:47.040Z"
+      },
+      {
+        "id": "a5fb6c7a-d7a7-4915-88da-e19bc963df26",
+        "memberCode": "IEI0010",
+        "ieiIndiaNo": "M-DEV-0010",
+        "fullName": "Engr. Anu Kurian",
+        "grade": "MIE",
+        "discipline": "Electrical",
+        "mobile": "00000010",
+        "bloodGroup": "A+",
+        "memberSinceYear": 2015,
+        "photoKey": null,
+        "photoUpdatedAt": null,
+        "company": "Kuwait Oil Company (KOC)",
+        "designation": "Senior Electrical Engineer",
+        "governorate": "Farwaniya",
+        "sector": "Oil & Gas",
+        "areaLocality": "Abbassiya",
+        "familyStatus": "Family here",
+        "familyMembersCount": 3,
+        "createdAt": "2026-10-04T11:45:55.699Z",
+        "updatedAt": "2026-10-05T07:28:47.204Z"
+      }
+    ],
+    "officeBearerAssignments": [
+      {
+        "id": "8cb71de6-93d8-43ea-9d5c-9b95496dcd18",
+        "memberId": "2c9a6af0-8da9-47b9-995f-8015f0d530a8",
+        "position": "TREASURER",
+        "term": "2026-27",
+        "active": true
+      }
+    ],
+    "subscriptionPeriods": [
+      {
+        "id": "02886fe1-4f82-424a-85b8-2e087be0ab87",
+        "label": "2025-26",
+        "startsOn": "2025-04-01T00:00:00.000Z",
+        "endsOn": "2026-03-31T00:00:00.000Z",
+        "amountFils": 20000,
+        "currency": "KWD"
+      },
+      {
+        "id": "b009e411-c1ac-44f3-b7f3-e9695caf2ea2",
+        "label": "2026-27",
+        "startsOn": "2026-04-01T00:00:00.000Z",
+        "endsOn": "2027-03-31T00:00:00.000Z",
+        "amountFils": 20000,
+        "currency": "KWD"
+      }
+    ],
+    "memberSubscriptions": [
+      {
+        "id": "eb959167-070d-4c99-8a9a-20dd7ad5a9c6",
+        "memberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "periodId": "02886fe1-4f82-424a-85b8-2e087be0ab87",
+        "status": "PAID",
+        "paidAt": "2025-04-15T00:00:00.000Z"
+      },
+      {
+        "id": "4e8c8ce1-4aae-47b9-9595-eb96a7c94516",
+        "memberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "periodId": "b009e411-c1ac-44f3-b7f3-e9695caf2ea2",
+        "status": "DUE",
+        "paidAt": null
+      },
+      {
+        "id": "ccfa8fc2-d639-457d-a7bc-e3b7afad9e4c",
+        "memberId": "a5fb6c7a-d7a7-4915-88da-e19bc963df26",
+        "periodId": "02886fe1-4f82-424a-85b8-2e087be0ab87",
+        "status": "PAID",
+        "paidAt": "2025-04-15T00:00:00.000Z"
+      },
+      {
+        "id": "f818bad1-78de-49c5-ae41-8751f242318a",
+        "memberId": "a5fb6c7a-d7a7-4915-88da-e19bc963df26",
+        "periodId": "b009e411-c1ac-44f3-b7f3-e9695caf2ea2",
+        "status": "DUE",
+        "paidAt": null
+      },
+      {
+        "id": "cceccdd1-c909-4200-b5ad-d295001e5e3d",
+        "memberId": "3c1b8cd0-ea3f-40ab-81ff-76ff45f65c9c",
+        "periodId": "02886fe1-4f82-424a-85b8-2e087be0ab87",
+        "status": "PAID",
+        "paidAt": "2025-04-15T00:00:00.000Z"
+      },
+      {
+        "id": "94bd1c73-c369-48ac-bb62-e339f8b77662",
+        "memberId": "3c1b8cd0-ea3f-40ab-81ff-76ff45f65c9c",
+        "periodId": "b009e411-c1ac-44f3-b7f3-e9695caf2ea2",
+        "status": "DUE",
+        "paidAt": null
+      },
+      {
+        "id": "336e702f-e48f-40b7-9bd2-4f767d7adb96",
+        "memberId": "2c9a6af0-8da9-47b9-995f-8015f0d530a8",
+        "periodId": "02886fe1-4f82-424a-85b8-2e087be0ab87",
+        "status": "PAID",
+        "paidAt": "2025-04-15T00:00:00.000Z"
+      },
+      {
+        "id": "d7379b3a-0b41-4c29-baf7-f7f9e2729df0",
+        "memberId": "2c9a6af0-8da9-47b9-995f-8015f0d530a8",
+        "periodId": "b009e411-c1ac-44f3-b7f3-e9695caf2ea2",
+        "status": "DUE",
+        "paidAt": null
+      }
+    ],
+    "paymentDeclarations": [],
+    "notifications": [
+      {
+        "id": "b18f0454-39d4-4de5-b1cb-9b9e5062d16a",
+        "memberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "type": "EVENT_REMINDER",
+        "title": "59th Engineers' Day is tomorrow",
+        "body": "18:30 at Kuwait Society of Engineers. Bring your card.",
+        "readAt": "2026-10-04T23:54:29.787Z",
+        "createdAt": "2026-10-04T22:54:29.557Z"
+      },
+      {
+        "id": "63945f9c-77d4-443c-bef6-c42ffdc77c8f",
+        "memberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "type": "RECEIPT_CONFIRMED",
+        "title": "Receipt confirmed",
+        "body": "Treasurer entered receipt no. 480, Book 4. KD 20 received.",
+        "readAt": "2026-10-04T23:54:29.787Z",
+        "createdAt": "2026-10-02T23:54:29.557Z"
+      },
+      {
+        "id": "ef027729-e2a3-460b-986b-12ef1fe17d6c",
+        "memberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "type": "DUES_DUE",
+        "title": "Subscription 2026-27 is due",
+        "body": "KD 20 · renew before the AGM to keep voting rights.",
+        "readAt": "2026-10-04T23:54:29.787Z",
+        "createdAt": "2026-10-01T23:54:29.557Z"
+      },
+      {
+        "id": "783bf88b-f7f4-4b7b-ad9b-fa3a5cb408f9",
+        "memberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "type": "URGENT_BLOOD",
+        "title": "Urgent: O+ blood needed",
+        "body": "Al Amiri Hospital",
+        "readAt": "2026-10-04T23:54:29.787Z",
+        "createdAt": "2026-09-27T23:54:29.557Z"
+      },
+      {
+        "id": "45b5fa99-61ab-453a-b3ec-df578dbd27a1",
+        "memberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "type": "WING_POST",
+        "title": "Ladies Wing posted an activity",
+        "body": "'Let's Act' acting workshop, 6 Nov at IGNOU Salmiya.",
+        "readAt": "2026-10-04T23:54:29.787Z",
+        "createdAt": "2026-09-27T23:54:29.557Z"
+      },
+      {
+        "id": "b27f3975-2216-4f01-b0ed-bb97c2503e7b",
+        "memberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "type": "CHAPTER_NOTICE",
+        "title": "AGM notice",
+        "body": "Annual General Meeting, 6 Feb 2027. Agenda attached.",
+        "readAt": "2026-10-04T23:54:29.787Z",
+        "createdAt": "2026-09-20T23:54:29.557Z"
+      },
+      {
+        "id": "712673e3-1f33-4af0-aa53-88dd88218023",
+        "memberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "type": "RECEIPT_CONFIRMED",
+        "title": "Receipt confirmed",
+        "body": "Treasurer entered receipt no. 480, Book 4. KD 20 received.",
+        "readAt": null,
+        "createdAt": "2026-10-05T00:18:27.633Z"
+      },
+      {
+        "id": "04e8072d-93d2-4757-b8d6-6fafb431e58f",
+        "memberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "type": "RECEIPT_CONFIRMED",
+        "title": "Receipt confirmed",
+        "body": "Treasurer entered receipt no. 480, Book 4. KD 20 received.",
+        "readAt": null,
+        "createdAt": "2026-10-05T00:29:27.090Z"
+      },
+      {
+        "id": "499bbaa2-4548-44b1-a1c6-689d8f3e2d76",
+        "memberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "type": "RECEIPT_CONFIRMED",
+        "title": "Receipt confirmed",
+        "body": "Treasurer entered receipt no. 480, Book 4. KD 20 received.",
+        "readAt": null,
+        "createdAt": "2026-10-05T00:32:01.831Z"
+      }
+    ],
+    "deviceTokens": [],
+    "eventCheckIns": [
+      {
+        "id": "7b97679d-0286-4100-9d15-718c18006828",
+        "eventId": "1",
+        "memberCode": "IEI0005",
+        "memberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "scannedAt": "2026-10-04T16:45:39.607Z",
+        "syncedAt": "2026-10-04T16:45:39.607Z",
+        "deviceOffline": false,
+        "seats": 1,
+        "volunteerNotes": null,
+        "createdAt": "2026-10-04T16:45:39.615Z"
+      },
+      {
+        "id": "a2030e87-c418-4909-b313-da6d29266801",
+        "eventId": "1",
+        "memberCode": "IEI0010",
+        "memberId": "a5fb6c7a-d7a7-4915-88da-e19bc963df26",
+        "scannedAt": "2026-10-04T16:00:00.000Z",
+        "syncedAt": "2026-10-04T16:46:16.472Z",
+        "deviceOffline": true,
+        "seats": 2,
+        "volunteerNotes": null,
+        "createdAt": "2026-10-04T16:46:16.478Z"
+      },
+      {
+        "id": "23f8dcf7-8a43-438b-9b80-a17206c19bb2",
+        "eventId": "1",
+        "memberCode": "IEI0015",
+        "memberId": "bd945bb4-98ce-4084-9797-635bb4947bc8",
+        "scannedAt": "2026-10-04T16:53:27.054Z",
+        "syncedAt": "2026-10-04T16:53:27.054Z",
+        "deviceOffline": false,
+        "seats": 1,
+        "volunteerNotes": null,
+        "createdAt": "2026-10-04T16:53:27.055Z"
+      },
+      {
+        "id": "34b07b04-a2f2-43a0-a80d-c2bf3a97b7bb",
+        "eventId": "1",
+        "memberCode": "IEI0022",
+        "memberId": "870f2293-0f0c-4ccb-882a-8c237520e10c",
+        "scannedAt": "2026-10-04T16:15:30.000Z",
+        "syncedAt": "2026-10-04T16:53:27.087Z",
+        "deviceOffline": true,
+        "seats": 3,
+        "volunteerNotes": null,
+        "createdAt": "2026-10-04T16:53:27.087Z"
+      },
+      {
+        "id": "85ca09f0-59d1-4b04-9618-f2b2d9016730",
+        "eventId": "1",
+        "memberCode": "IEI0042",
+        "memberId": "aac2f989-3410-4b78-8fac-2b5b29f015c2",
+        "scannedAt": "2026-10-05T04:43:16.283Z",
+        "syncedAt": "2026-10-05T04:55:16.123Z",
+        "deviceOffline": true,
+        "seats": 1,
+        "volunteerNotes": null,
+        "createdAt": "2026-10-05T04:55:16.134Z"
+      },
+      {
+        "id": "cef0f8c0-6844-4e00-8120-a8c34d414701",
+        "eventId": "1",
+        "memberCode": "IEI9001",
+        "memberId": "2c9a6af0-8da9-47b9-995f-8015f0d530a8",
+        "scannedAt": "2026-10-05T04:42:50.737Z",
+        "syncedAt": "2026-10-05T04:55:16.141Z",
+        "deviceOffline": true,
+        "seats": 1,
+        "volunteerNotes": null,
+        "createdAt": "2026-10-05T04:55:16.141Z"
+      },
+      {
+        "id": "af5f498a-3174-4bdd-adb8-048a2b78344c",
+        "eventId": "1",
+        "memberCode": "IEI9100",
+        "memberId": "3c1b8cd0-ea3f-40ab-81ff-76ff45f65c9c",
+        "scannedAt": "2026-10-05T04:56:42.515Z",
+        "syncedAt": "2026-10-05T04:56:44.934Z",
+        "deviceOffline": false,
+        "seats": 1,
+        "volunteerNotes": null,
+        "createdAt": "2026-10-05T04:56:44.934Z"
+      },
+      {
+        "id": "eda844c3-a2e2-4c04-9b25-71e0ea695b6e",
+        "eventId": "1",
+        "memberCode": "IEI0034",
+        "memberId": "39917c83-7701-424f-b68f-c7ce6e92fe7c",
+        "scannedAt": "2026-10-05T04:56:50.892Z",
+        "syncedAt": "2026-10-05T04:56:53.146Z",
+        "deviceOffline": false,
+        "seats": 2,
+        "volunteerNotes": null,
+        "createdAt": "2026-10-05T04:56:53.147Z"
+      }
+    ],
+    "authIdentities": [],
+    "auditLogs": [
+      {
+        "id": "6c82ca62-c480-4c53-a795-3a9036f802bd",
+        "actorMemberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "action": "PAYMENT_DECLARATION_SUBMITTED",
+        "entity": "PaymentDeclaration",
+        "entityId": "023dfe99-a922-40b5-bd60-ecd9d6c27455",
+        "details": {
+          "method": "BANK_TRANSFER",
+          "hasReceipt": true
+        },
+        "createdAt": "2026-10-05T00:15:52.794Z"
+      },
+      {
+        "id": "419d19c3-d372-4b9e-be17-89253cc02517",
+        "actorMemberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "action": "PAYMENT_DECLARATION_SUBMITTED",
+        "entity": "PaymentDeclaration",
+        "entityId": "7336b3cd-f93c-4914-9392-84defd75b8d7",
+        "details": {
+          "method": "BANK_TRANSFER",
+          "hasReceipt": true
+        },
+        "createdAt": "2026-10-05T00:18:17.011Z"
+      },
+      {
+        "id": "d7687be6-3a7a-407a-80ae-434f61e3bc96",
+        "actorMemberId": "2c9a6af0-8da9-47b9-995f-8015f0d530a8",
+        "action": "RECEIPT_CONFIRMED",
+        "entity": "PaymentDeclaration",
+        "entityId": "7336b3cd-f93c-4914-9392-84defd75b8d7",
+        "details": {
+          "bookNo": "4",
+          "receiptNo": "480",
+          "confirmedAt": "2026-10-05T00:18:27.600Z",
+          "memberSubscriptionId": "4e8c8ce1-4aae-47b9-9595-eb96a7c94516"
+        },
+        "createdAt": "2026-10-05T00:18:27.620Z"
+      },
+      {
+        "id": "cb8be7b8-82f6-4275-9451-e724d5ef188c",
+        "actorMemberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "action": "PAYMENT_DECLARATION_SUBMITTED",
+        "entity": "PaymentDeclaration",
+        "entityId": "84b89bc0-d645-494d-add1-8a992924639e",
+        "details": {
+          "method": "BANK_TRANSFER",
+          "hasReceipt": true
+        },
+        "createdAt": "2026-10-05T00:29:08.473Z"
+      },
+      {
+        "id": "30c7c33d-3bc0-4b04-993d-ca3b95e60e5d",
+        "actorMemberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "action": "PAYMENT_DECLARATION_SUBMITTED",
+        "entity": "PaymentDeclaration",
+        "entityId": "c71882cd-60b3-4585-bf48-6500e5c8b592",
+        "details": {
+          "method": "BANK_TRANSFER",
+          "hasReceipt": true
+        },
+        "createdAt": "2026-10-05T00:29:16.757Z"
+      },
+      {
+        "id": "594111e4-0050-4e66-b84b-7e32fc5c2611",
+        "actorMemberId": "2c9a6af0-8da9-47b9-995f-8015f0d530a8",
+        "action": "RECEIPT_CONFIRMED",
+        "entity": "PaymentDeclaration",
+        "entityId": "c71882cd-60b3-4585-bf48-6500e5c8b592",
+        "details": {
+          "bookNo": "4",
+          "receiptNo": "480",
+          "confirmedAt": "2026-10-05T00:29:27.066Z",
+          "memberSubscriptionId": "4e8c8ce1-4aae-47b9-9595-eb96a7c94516"
+        },
+        "createdAt": "2026-10-05T00:29:27.085Z"
+      },
+      {
+        "id": "bedd404a-7688-481d-a744-9b0e4efb23c9",
+        "actorMemberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "action": "PAYMENT_DECLARATION_SUBMITTED",
+        "entity": "PaymentDeclaration",
+        "entityId": "e1d59ac0-020e-420c-985c-a8e64adb216f",
+        "details": {
+          "method": "BANK_TRANSFER",
+          "hasReceipt": true
+        },
+        "createdAt": "2026-10-05T00:31:43.287Z"
+      },
+      {
+        "id": "d9ebe875-d8e8-43d1-8c3d-4a93061b7665",
+        "actorMemberId": "64ced326-0f34-4aa7-89b8-510107b02b47",
+        "action": "PAYMENT_DECLARATION_SUBMITTED",
+        "entity": "PaymentDeclaration",
+        "entityId": "921202eb-0984-4daa-ac61-4454e58f24cb",
+        "details": {
+          "method": "BANK_TRANSFER",
+          "hasReceipt": true
+        },
+        "createdAt": "2026-10-05T00:31:51.532Z"
+      },
+      {
+        "id": "7d258488-9b61-42cb-9089-4e483cb49714",
+        "actorMemberId": "2c9a6af0-8da9-47b9-995f-8015f0d530a8",
+        "action": "RECEIPT_CONFIRMED",
+        "entity": "PaymentDeclaration",
+        "entityId": "921202eb-0984-4daa-ac61-4454e58f24cb",
+        "details": {
+          "bookNo": "4",
+          "receiptNo": "480",
+          "confirmedAt": "2026-10-05T00:32:01.806Z",
+          "memberSubscriptionId": "4e8c8ce1-4aae-47b9-9595-eb96a7c94516"
+        },
+        "createdAt": "2026-10-05T00:32:01.820Z"
+      }
+    ]
+  }
+}
